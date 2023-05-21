@@ -73,3 +73,6 @@
 
 - BenchmarkBoreasv3.zip
   https://drive.google.com/file/d/1zWF8uSmnDgzYczuuoK-w-zF_AnVV7o95/view?usp=share_link
+- Logs
+  https://drive.google.com/drive/folders/1dUbsEKuzkoXWISPCPsSWhNgbkI5QdM7H?usp=share_link  
+
