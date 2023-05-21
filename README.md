@@ -9,6 +9,7 @@
   ```
   Ubuntu 20.04
   nvcc 11.8/11.6
+  python 3.8
   ```
 
 - Requirements
