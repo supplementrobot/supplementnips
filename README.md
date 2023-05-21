@@ -12,7 +12,7 @@
   python 3.8
   ```
 
-- Requirements
+- PyTorch
 
   ```
   pip install torch==2.0.0+cu118 torchvision==0.15.1+cu118 torchaudio==2.0.1 --index-url https://download.pytorch.org/whl/cu118
