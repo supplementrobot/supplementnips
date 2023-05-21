@@ -45,6 +45,8 @@
   scipy
   torch_geometric==1.7.2
   torch_scatter==2.0.9
+  torch_cluster
+  torch_sparse
   timm
   torchdiffeq
   tqdm
