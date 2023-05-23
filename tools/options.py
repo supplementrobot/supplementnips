@@ -31,12 +31,9 @@ class Options():
 
 
 
-        # False True
         self.parser.add_argument('--use_minkloc', type=str, default=False)
-        # resnet18org  resnet34org
-        # resnet18   resnet34   convnext_tiny  convnext_small  swin_t  swin_s  swin_v2_t  swin_v2_s
         self.parser.add_argument('--minkloc_image_fe', type=str, default='resnet18org')
-        # minkfpn  generalminkfpn
+
         self.parser.add_argument('--minkfpn', type=str, default='minkfpn')
 
 
@@ -48,7 +45,7 @@ class Options():
         self.parser.add_argument('--use_proj_inffblocal', type=str, default=False)
         self.parser.add_argument('--usemeconv1x1_beforesptr', type=str, default=False)
         self.parser.add_argument('--usemeconv1x1_aftersptr', type=str, default=True)
-        # conv  fc  fcode  fcode64
+
         self.parser.add_argument('--beforeafter_convtype', type=str, default='fcode')
         self.parser.add_argument('--beforeafter_useres', type=str, default=False)     # only for fcode
         self.parser.add_argument('--beforeafter_useextrafc', type=str, default=False) # only for fcode
@@ -58,7 +55,6 @@ class Options():
         self.parser.add_argument('--imageswin_windowsize', type=int, default=4) 
         self.parser.add_argument('--imageswin_useproj', type=str, default=False) 
         self.parser.add_argument('--imageswin_userelu', type=str, default=False) 
-        # swin   swinode 
         self.parser.add_argument('--imageswin_type', type=str, default='swinode') 
         self.parser.add_argument('--imageswin_useres', type=str, default=False) 
 
@@ -67,29 +63,18 @@ class Options():
 
 
 
-        # resnet18   resnet34  resnet50  
-        # convnext_tiny      convnext_small  
-        # swin_t    swin_s    swin_v2_t    swin_v2_s  [batch60]
-        # efficientnet_b0   efficientnet_b1   efficientnet_b2   efficientnet_v2_s
-        # regnet_x_3_2gf    regnet_y_1_6gf    regnet_y_3_2gf
+
         self.parser.add_argument('--image_fe', type=str, default='resnet18')
-        # convnext_tiny[3,3,9,3]  
         self.parser.add_argument('--num_other_stage_blocks', type=int, default=3)
         self.parser.add_argument('--num_stage3_blocks', type=int, default=3)
         self.parser.add_argument('--sph_cloud_fe', type=str, default=None) # None 'resnet18'
-        # self.parser.add_argument('--sph_num_other_stage_blocks', type=int, default=3)
-        # self.parser.add_argument('--sph_num_stage3_blocks', type=int, default=3)
 
-        # general_minkfpn   minkloc  
         self.parser.add_argument('--cloud_fe', type=str, default='minkloc')
         self.parser.add_argument('--num_image_points', type=int, default=300)
         self.parser.add_argument('--num_cloud_points', type=int, default=128)
         self.parser.add_argument('--fusion_dim', type=int, default=128)
-        # ln
         self.parser.add_argument('--gattnorm', type=str, default='ln')
-        # gelu  relu
         self.parser.add_argument('--gattactivation', type=str, default='relu')
-        # 4096  6144  8192   
 
 
 
@@ -100,18 +85,12 @@ class Options():
         self.parser.add_argument('--num_blocks_in_ffb', type=int, default=1) # exclude the first block
         self.parser.add_argument('--use_l2norm_before_fusion', type=str, default=True)
         self.parser.add_argument('--use_a_fusion_first', type=bool, default=True)
-        # gemextra   randomsamelength   gemextra_randomsamelength
         self.parser.add_argument('--in_cloud_feat_type', type=str, default='randomsamelength')
-        # pure   mix   imageonly
         self.parser.add_argument('--ffb_type', type=str, default='pure')
-        # basicblock  bottleneck  gatt  gattm   attn  resattn   swinblock
         self.parser.add_argument('--gatt_image_block_type', type=str, default='swinblock')
-        # gatt  gattm   attn  resattn
         self.parser.add_argument('--gatt_cloud_block_type', type=str, default='attn')
 
 
-        # gatt  gattm   attn  resattn
-        # qkv   qkvm   qkvg1   qkvg2
         self.parser.add_argument('--use_attn2', type=str, default=True)
         self.parser.add_argument('--use_attn3', type=str, default=True)
         self.parser.add_argument('--use_attninlocalffb', type=str, default=True)
@@ -120,20 +99,13 @@ class Options():
         self.parser.add_argument('--gatt_fusion_block_type3', type=str, default='qkvg1')
 
 
-        # basicblock  bottleneck  gatt  gattm   attn  resattn   swinblock
+
         self.parser.add_argument('--later_image_branch_type', type=str, default='basicblock')
-        # basicblock  submbasicblock
         self.parser.add_argument('--later_cloud_branch_type', type=str, default='basicblock')
-        # add     add_w   times_sigmoid  times_wsigmoid   None
         self.parser.add_argument('--later_image_branch_interaction_type', type=str, default='add')
         self.parser.add_argument('--later_cloud_branch_interaction_type', type=str, default='add')
-        # fconfusion   fconfusiongem
         self.parser.add_argument('--make_image_fusion_same_channel', type=str, default='fconfusiongem')
-        # imageorg_cloudorg_ffb   imagelater_cloudlater_ffb   imagelater_cloudlater
-        # imageorg    cloudorg
-        # imagelater_cloudlater_ffb_sphcloud
         self.parser.add_argument('--final_embedding_type', type=str, default='imagelater_cloudlater_ffb')
-        # image   cloud   cat
         self.parser.add_argument('--useminkloc_final_embedding_type', type=str, default='cat')
 
 
@@ -151,7 +123,6 @@ class Options():
 
 
 
-        # -- image augmentation rate
         self.parser.add_argument('--bcs_aug_rate', type=float, default=0.2) # 0.2
         self.parser.add_argument('--hue_aug_rate', type=float, default=0.1) # 0.1
 
