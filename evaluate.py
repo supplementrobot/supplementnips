@@ -306,7 +306,7 @@ def get_recall(m, n, database_vectors, query_vectors, query_sets, database_sets)
     database_nbrs = KDTree(database_output)
 
     if args.dataset == 'oxfordadafusion':
-        num_neighbors = 20
+        num_neighbors = 25
     else:
         num_neighbors = 25
 
