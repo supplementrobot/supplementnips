@@ -32,7 +32,7 @@
   python setup.py install
   ```
 
-  Others1
+  Others
 
   ```
   numpy
@@ -67,12 +67,32 @@
   python setup.py install
   ```
 
-### Datasets and Code
+
+
+### Datasets and Logs
 
 ***
 
-- BenchmarkBoreasv3.zip
+- We provide the preprocessed  Boreas dataset in
+
   https://drive.google.com/file/d/1zWF8uSmnDgzYczuuoK-w-zF_AnVV7o95/view?usp=share_link
-- Logs
+
+  After downloading, change the two arguments in tools/options.py, --dataset_folder and --image_path, as where you store your Boreas dataset.
+
+- We provide a pretrained weight for the Boreas dataset.
+
   https://drive.google.com/drive/folders/1dUbsEKuzkoXWISPCPsSWhNgbkI5QdM7H?usp=share_link  
 
+  After downloading, put the logs/ under the project root folder as:
+
+  ```
+  --supplement_code
+    --TV_offline_models
+    --config
+    --datasets
+    --layers
+    --logs
+    ...
+  ```
+
+  Then you can run evaluate.py to test the pretrained performance.
