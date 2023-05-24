@@ -1,12 +1,4 @@
-### Site
 
-***
-
-- Our code is attached on the anonymous site at
-
-  https://anonymous.4open.science/r/supplement/
-
-  
 
 ### Requirements
 
