@@ -83,7 +83,7 @@ def evaluate_dataset(model, device, params, database_sets, query_sets, silent=Tr
     # Run evaluation on a single dataset
 
     if args.dataset == 'oxfordadafusion':
-        recall = np.zeros(20)
+        recall = np.zeros(25)
     else:
         recall = np.zeros(25)
         
